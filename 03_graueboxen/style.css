@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    width: 600px;
+    margin: auto;
+}
+
+header,
+main,
+aside,
+footer {
+    background-color: gray;
+    padding: 10px;
+}
+
+header {
+    height: 100px;
+}
+
+main,
+aside {
+    height: 400px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+main {
+    width: 70%;
+    float: left;
+
+}
+
+aside {
+    width: 200px;
+    margin-left: 2%;
+    width: 28%;
+}
+
+footer {
+    height: 75px;
+    margin-top: 10px;
+}
+
+#logo {
+    height: 20px;
+    width: 100px;
+    background-color: crimson;
+}
+
+nav {
+    height: 20px;
+    margin-top: 10px;
+    background-color: lightblue;
+}
+
+article {
+    height: 50px;
+    background-color: lightblue;
+    margin-bottom: 10px;
+    width: 66%;
+}
