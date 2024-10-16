@@ -1,0 +1,31 @@
+body {
+    background-color: pink;
+}
+
+div {
+    border: 2px solid green;
+    padding: 10px;
+}
+
+img {
+    height: 400px;
+    width: 800px;
+}
+
+nav {
+    background-color: aqua;
+    height: 40px;
+    margin: 30px;
+}
+
+a {
+    margin: 20px;
+}
+
+.peter {
+    background-color: gold;
+}
+
+.gerlinde {
+    background-color: purple;
+}

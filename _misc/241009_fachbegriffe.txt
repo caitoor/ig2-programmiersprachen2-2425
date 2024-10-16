@@ -1,0 +1,13 @@
+Browser
+JavaScript
+Algorithmus
+Hypertext Markup Language
+opening tag
+closing tag
+html-Grundgerüst
+body
+head
+css
+Syntax
+Library
+impersonate
