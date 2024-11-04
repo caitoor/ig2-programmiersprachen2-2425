@@ -1,0 +1,26 @@
+body {
+    background-color: #222;
+}
+
+#stage {
+    background-color: #111;
+    height: 600px;
+    width: 800px;
+    position: relative;
+}
+
+.bar {
+    background-color: white;
+    width: 30px;
+    bottom: 0;
+    position: absolute;
+}
+
+.bar-1 {
+    height: 100px;
+}
+
+.bar-2 {
+    height: 300px;
+    left: 60px;
+}
