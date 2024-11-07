@@ -3,11 +3,19 @@ console.log("Program started");
 let lieblingsZahl = 121;
 const moritzFavorite = 4;
 const kurslieblingszahlen = [1, 2, 3, 4]; */
+
+let meineVariable = "typunsicher";
+meineVariable = 2;
+meineVariable = meineVariable + 2;
+meineVariable += 2;
+meineVariable += "typunsicher";
+console.log(meineVariable);
+
+
 let numbers;
 numbers = [1, 3, 6, 9, 3, 6, 2];
 
 //console.log(numbers[4]);
-
 /* console.log(lieblingsZahl + moritzFavorite);
 console.log(1 + 1); */
 
