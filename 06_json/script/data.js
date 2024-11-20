@@ -607,8 +607,4 @@ const data = [
     "continents": "Asia, Africa",
     "intelligence": 3
   }
-]
-
-for (let i = 0; i < data.length; i++) {
-  console.log(data[i].name);
-}
+];
