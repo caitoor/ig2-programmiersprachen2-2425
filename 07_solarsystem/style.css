@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #111;
+}
+
+#container {
+    border: 2px solid red;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.planet {
+    border-radius: 50%;
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 10%;
+}
