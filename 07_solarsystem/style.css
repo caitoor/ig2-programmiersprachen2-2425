@@ -1,10 +1,15 @@
 * {
     box-sizing: border-box;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
 }
 
 body {
     margin: 0;
     background-color: #111;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 #container {
@@ -14,11 +19,54 @@ body {
     position: relative;
 }
 
-.planet {
+main {
+
+}
+
+nav {
+    
+}
+
+.tooltip {
+    position: absolute;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    color: white;
+    white-space: nowrap;
+    z-index: 100;
+}
+
+.circle {
     border-radius: 50%;
     border: 1px solid white;
     position: absolute;
     left: 50%;
     top: 50%;
-    opacity: 10%;
+    opacity: 3%;
+    cursor: pointer;
+}
+
+.planet {
+    background-color: blue;
+}
+
+.asteroid {
+    background-color: gray;
+
+}
+
+.dwarf-planet {
+    background-color: red;
+}
+
+.moon {
+    background-color: yellow;
+}
+
+.comets {
+    background-color: green;
 }

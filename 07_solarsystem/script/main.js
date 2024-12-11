@@ -1,67 +1,53 @@
-function greetConsole() {
-    console.log("hallo solar system");
-}
-
 const container = document.getElementById("container");
-
-let dataNew = [
-    { name: "Mercury", radius: 5, color: "gray" },
-    { name: "Venus", radius: 12, color: "orange" },
-    { name: "Earth", radius: 13, color: "blue" },
-    { name: "Mars", radius: 7, color: "red" },
-    { name: "Jupiter", radius: 30, color: "brown" },
-    { name: "Saturn", radius: 25, color: "goldenrod" },
-    { name: "Uranus", radius: 20, color: "lightblue" },
-    { name: "Neptune", radius: 20, color: "darkblue" },
-    { name: "Pluto", radius: 4, color: "darkgray" },
-];
-
-// dataNew.sort((a, b) => b.radius - a.radius);
+const tooltip = document.querySelector(".tooltip");
 
 function sortArrayByKey(array, key) {
     return array.sort((a, b) => b[key] - a[key]);
 }
 
-dataNew = sortArrayByKey(dataNew, 'radius');
-
-/* 
-dataNew.forEach(planet => {
-    let divBox = document.createElement("div");
-    divBox.classList.add("planet");
-    divBox.style.backgroundColor = planet.color;
-    divBox.style.width = (planet.radius * 10) + "px";
-    divBox.style.height = (planet.radius * 10) + "px";
-    divBox.style.marginTop = (0 - planet.radius * 5) + "px";
-    divBox.style.marginLeft = (0 - planet.radius * 5) + "px";
-    divBox.addEventListener("click", () => {
-        console.log(planet.name);
-    });
-    container.appendChild(divBox);
-}); 
-*/
-
 data = sortArrayByKey(data, 'meanRadius');
+
+const containerHeight = container.offsetHeight;
+console.log(`containerHeight: ${containerHeight}`);
+const maxRadius = Math.max(...data.map(body => body.meanRadius));
+console.log(`maxRadius: ${maxRadius}`);
+const coefficient = containerHeight / (maxRadius * 2);
+console.log(`coefficient: ${coefficient}`);
 
 data.forEach((body) => {
     // console.log(body.id);
     let divBox = document.createElement("div");
-    divBox.classList.add("planet");
-    divBox.style.backgroundColor = "white";
-    divBox.style.width = (body.meanRadius * 2) + "px";
-    divBox.style.height = (body.meanRadius * 2) + "px";
-    divBox.style.marginTop = (0 - body.meanRadius) + "px";
-    divBox.style.marginLeft = (0 - body.meanRadius) + "px";
-    divBox.addEventListener("click", () => {
+    divBox.classList.add("circle");
+    switch (body.bodyType) {
+        case "Moon":
+            divBox.classList.add("moon");
+            break;
+        case "Planet":
+            divBox.classList.add("planet");
+            break;
+        case "Dwarf Planet":
+            divBox.classList.add("dwarf-planet");
+            break;
+        default:
+            divBox.classList.add("asteroid");
+            break;
+    }
+    divBox.style.width = (body.meanRadius * 2 * coefficient) + "px";
+    divBox.style.height = (body.meanRadius * 2 * coefficient) + "px";
+    divBox.style.marginTop = (0 - body.meanRadius * coefficient) + "px";
+    divBox.style.marginLeft = (0 - body.meanRadius * coefficient) + "px";
+
+    divBox.addEventListener("mouseover", () => {
         console.log(body.name);
+        tooltip.textContent = body.name;
+        tooltip.classList.remove("hidden");
+    });
+    divBox.addEventListener("mouseout", () => {
+        tooltip.classList.add("hidden");
+    });
+    divBox.addEventListener("mousemove", (event) => {
+        tooltip.style.left = event.pageX + "px";
+        tooltip.style.top = event.pageY + "px";
     });
     container.appendChild(divBox);
 });
-
-
-
-/* Beispiel einer return-Funktion */
-function shoutBack() {
-    return "hallo";
-}
-
-console.log(shoutBack());
