@@ -6,6 +6,7 @@
 body {
     margin: 0;
     background-color: #111;
+    overflow: hidden;
 }
 
 .hidden {
@@ -20,11 +21,32 @@ body {
 }
 
 main {
-
+    height: 100%;
 }
 
 nav {
-    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    z-index: 100;
+}
+
+.nav-item {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .tooltip {
@@ -48,6 +70,7 @@ nav {
     top: 50%;
     opacity: 3%;
     cursor: pointer;
+    transition: all .5s;
 }
 
 .planet {
